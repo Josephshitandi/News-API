@@ -1,0 +1,4 @@
+export MOVIE_API_KEY=4faab68d61e64f1db5cbbe6d92574e2f
+export SECRET_KEY=Josephshitandi
+
+python3.8 manage.py server
