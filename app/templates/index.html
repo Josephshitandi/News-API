@@ -17,32 +17,40 @@
     </form>
 
 </div>
-
+<div class="row">
 <!-- Popular News -->
 <h3> Popular News</h3>
 <ul>
     {{ macro.displayNewsList(popularity)}}
-</ul>
+</ul></div><br><br>
+<div class="row">
 <!-- Upcoming News  -->
-<h3> Upcoming Newss </h3>
+<h3> Bit Coin News </h3>
 <ul>
     {{ macro.displayNewsList(bitcoin)}}
 </ul>
+</div><br><br>
+<div class="row">
 <!-- Now showing News -->
-<h3>Now Showing</h3>
+<h3>Business News</h3>
 <ul>
     {{ macro.displayNewsList(business)}}
 </ul>
+</div><br><br>
+<div class="row">
 <!-- Now showing News -->
-<h3>Now Showing</h3>
+<h3>Tech Crunch News</h3>
 <ul>
     {{ macro.displayNewsList(techcrunch)}}
 </ul>
+</div><br><br>
+<div class="row">
 <!-- Now showing News -->
-<h3>Now Showing</h3>
+<h3>Wall Street News</h3>
 <ul>
     {{ macro.displayNewsList(wall_street)}}
 </ul>
+</div>
 
 
 {% endblock%}
