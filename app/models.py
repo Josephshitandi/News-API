@@ -8,3 +8,4 @@ class News:
         self.image = image
         self.description = description
         self.date = date
+        
