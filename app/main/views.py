@@ -1,6 +1,6 @@
 from flask import render_template,request,redirect,url_for
 from . import main
-from ..request import get_news
+from ..request import get_news,get_article
 from .forms import ReviewForm
 # from ..models import Review
 
@@ -27,4 +27,14 @@ def index():
     else:
         return render_template('index.html', title = title, popularity = popularity, bitcoin = bitcoin, business = business, techcrunch = techcrunch, wall_street = wall_street )
 
+@main.route('/article/<title>')
+def article(title):
 
+    '''
+    View article page function that returns the news articles details page and its data
+    '''
+    news = get_article(title)
+    title = f'{news.title}'
+    article = Article.get_article(title)
+
+    return render_template('article.html',title = title,news = news,article = article)
