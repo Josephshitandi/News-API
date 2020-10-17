@@ -15,16 +15,16 @@ def get_news(source):
     '''
     Function that gets the json response to our url request
     '''
-    get_newss_url = base_url.format(source,api_key)
+    get_news_url = base_url.format(source,api_key)
 
-    with urllib.request.urlopen(get_newss_url) as url:
-        get_newss_data = url.read()
-        get_newss_response = json.loads(get_newss_data)
+    with urllib.request.urlopen(get_news_url) as url:
+        get_news_data = url.read()
+        get_news_response = json.loads(get_news_data)
 
         news_results = None
 
-        if get_newss_response['articles']:
-            news_results_list = get_newss_response['articles']
+        if get_news_response['articles']:
+            news_results_list = get_news_response['articles']
             news_results = process_results(news_results_list)
 
 
@@ -42,14 +42,12 @@ def process_results(news_list):
     '''
     news_results = []
     for news_item in news_list:
-        id = news_item.get('id')
-        title = news_item.get('original_title')
-        overview = news_item.get('overview')
-        poster = news_item.get('poster_path')
-        vote_average = news_item.get('vote_average')
-        vote_count = news_item.get('vote_count')
+        title = news_item.get('title')
+        image = news_item.get('urlToImage')
+        description = news_item.get('description')
+        date = news_item.get('publishedAt')
 
-        if poster:
+        if image:
             news_object = News(title,image,description,date)
             news_results.append(news_object)
 
