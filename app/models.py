@@ -23,7 +23,7 @@ class Article:
 
 
     def save_article(self):
-        article.all_articles.append(self)
+        Article.all_articles.append(self)
 
 
     @classmethod

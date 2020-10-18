@@ -4,7 +4,7 @@ from app.models import Article
 class TestArticle(unittest.TestCase):
 
     def setUp(self):
-        self.new_article = Article("title","https://image.tmdb.org/t/ptfukyy","article")
+        self.new_article = Article("title","https://image.tmdb.org/t/ptfukyy","article",'2020','news')
 
     def tearDown(self):
         '''
@@ -18,8 +18,10 @@ class TestArticle(unittest.TestCase):
 
     def test_check_instance_variables(self):
         self.assertEquals(self.new_article.title,'title')
-        self.assertEquals(self.new_article.imageurl,"https://image.tmdb.org/t/ptfukyy")
-        self.assertEquals(self.new_article.article,'artile')
+        self.assertEquals(self.new_article.image,"https://image.tmdb.org/t/ptfukyy")
+        self.assertEquals(self.new_article.description,'article')
+        self.assertEquals(self.new_article.date,'2020')
+        self.assertEquals(self.new_article.article,'news')
 
 
     def test_save_article(self):
