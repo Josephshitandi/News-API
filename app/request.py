@@ -5,11 +5,14 @@ from .models import News
 api_key = None
 # Getting the news base url
 base_url = None
+base_url2 = None
 
 def configure_request(app):
     global api_key,base_url
     api_key = app.config['NEWS_API_KEY']
     base_url = app.config['NEWS_API_BASE_URL']
+    base_url2 = app.config['CATEG_API_BASE_URL']
+    
 
 def get_news(source):
     '''
@@ -46,16 +49,16 @@ def process_results(news_list):
         image = news_item.get('urlToImage')
         description = news_item.get('description')
         date = news_item.get('publishedAt')
+        article = news_item.get('url')
 
         if image:
-            news_object = News(title,image,description,date)
+            news_object = News(title,image,description,date,article)
             news_results.append(news_object)
 
     return news_results
 
-def get_article(title):
-    get_news_details_url = base_url.format(title,api_key)
-
+def get_article(article):
+    get_news_details_url = articlebase_url.format(article,api_key)
     with urllib.request.urlopen(get_news_details_url) as url:
         news_details_data = url.read()
         news_details_response = json.loads(news_details_data)
@@ -66,7 +69,24 @@ def get_article(title):
             image = news_item.get('urlToImage')
             description = news_item.get('description')
             date = news_item.get('publishedAt')
+            article = news_item.get('url')
 
-            news_object = News(title,image,description,date)
+            news_object = News(title,image,description,date,article)
 
     return news_object
+
+def get_category(category_name):
+    get_category_url = base_url.format(category_name,api_key)
+    print(get_category_url)
+
+    with urllib.request.urlopen(get_category_url) as url:
+        get_category_data = url.read()
+        get_category_response = json.loads(get_category_data)
+
+        get_category_results = None
+
+        if get_category_response['articles']:
+            get_category_list = get_category_response['articles']
+            get_category_results = process_results(get_category_list)
+          
+    return get_category_results
