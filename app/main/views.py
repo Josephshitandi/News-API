@@ -55,7 +55,7 @@ def technology():
     method that returns the categories page
     '''
     technology = get_category('technology')
-    title = 'Technoloy'
+    title = 'TECHNOLOGY'
     
     return render_template('categories.html', title = title, technology = technology)
 
