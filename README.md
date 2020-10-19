@@ -11,10 +11,12 @@ An application that gives a list and preview of news articles from various news 
 ## Demo
 Here is a working live demo : https://shitandi-news-api.herokuapp.com/
 
+Here is my figma link: https://www.figma.com/file/K1sq79e7VTkAw5r5bF9fs1/News-API?node-id=5%3A3
+
 ## Mobile support
 The News-API is compatible with devices of all sizes and all OS's, and consistent improvements are being made.
 
-## [Usage](https://Josephshitandi.github.io/News-API/)
+## [Usage](https://shitandi-news-api.herokuapp.com/)
 ### Development
 
 Want to contribute? Awesome!

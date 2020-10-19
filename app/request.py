@@ -1,5 +1,5 @@
 import urllib.request,json
-from .models import News
+from .models import News,Article
 
 # Getting api key
 api_key = None
@@ -77,7 +77,6 @@ def get_article(article):
 
 def get_category(category_name):
     get_category_url = base_url.format(category_name,api_key)
-    print(get_category_url)
 
     with urllib.request.urlopen(get_category_url) as url:
         get_category_data = url.read()
