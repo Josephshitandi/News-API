@@ -1,4 +1,4 @@
-# Quotes
+# NEWS ARTICLES
 
 <table>
 <tr>
@@ -9,7 +9,7 @@ An application that gives a list and preview of news articles from various news 
 </table>
 
 ## Demo
-Here is a working live demo : 
+Here is a working live demo : https://shitandi-news-api.herokuapp.com/
 
 ## Mobile support
 The News-API is compatible with devices of all sizes and all OS's, and consistent improvements are being made.
@@ -42,5 +42,4 @@ To fix a bug or enhance an existing module, follow these steps:
 
  © [Joseph Shitandi Otaaba](https://github.com/Josephshitandi)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
 
